@@ -52,6 +52,5 @@ if __name__ == "__main__":
         schedule_endpoint,
     ], auth_key)
 
-    # [x.test() for x in endpoints]
-    # [x.fuzz() for x in endpoints]
     endpoints.test_endpoints()
+    [x.fuzz() for x in endpoints]
