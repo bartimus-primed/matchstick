@@ -25,7 +25,7 @@ class Endpoints:
         endpoints = Endpoints(root)
         for e in endpoint_addresses:
             for k in e.keys():
-                endpoints.endpoints.append(
+                endpoints.add_endpoint(
                     Endpoint.new_endpoint(root, k, e[k]["methods"], auth_key)
                 )
         return endpoints
