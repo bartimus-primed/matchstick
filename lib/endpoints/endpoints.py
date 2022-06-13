@@ -11,7 +11,6 @@ class Endpoints:
 
     def test_endpoints(self):
         for endpoint in self.endpoints:
-            print(f"Testing: {endpoint.address}")
             try:
                 endpoint.test()
             except Exception as e:

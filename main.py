@@ -53,4 +53,3 @@ if __name__ == "__main__":
     ], auth_key)
 
     endpoints.test_endpoints()
-    [x.fuzz() for x in endpoints]

@@ -23,6 +23,7 @@ class Endpoint:
             Parameters:{self.parameters}\n"
 
     def send_request(self):
+        print(f"Testing: {self.address}")
         param_values = []
         for param in self.parameters:
             param_values.append(self.root + self.address.replace(
@@ -30,10 +31,12 @@ class Endpoint:
                 param.new_value()
             ))
         for m in self.methods:
-            m.send_request(
-                self.root+self.address,
-                self.auth_key
-            )
+            for p in param_values:
+                print(f"\tTesting {m.method} with param: {p}")
+                m.send_request(
+                    p,
+                    self.auth_key
+                )
 
     @classmethod
     def new_endpoint(self, root, address, methods, auth_key):
